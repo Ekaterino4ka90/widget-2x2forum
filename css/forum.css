@@ -1,0 +1,32 @@
+.forum-widget-wrapper .thread {
+    display: flex;
+    align-items: center;
+}
+
+.forum-widget-wrapper img {
+    width: auto;
+    max-width: max-content;
+}
+
+.forum-widget-wrapper .inner-icon {
+    display: flex;
+    align-self: center;
+    margin-top: 5px;
+}
+
+.forum-widget-wrapper .thread-link {
+    margin-left: 10px;
+    flex-grow: 1;
+}
+
+.forum-widget-wrapper .thread .messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.forum-widget-wrapper .messages .font-bold {
+    font-weight: bold;
+}
