@@ -1,4 +1,4 @@
-=== 2x2forum ===
+=== widget-2x2forum ===
 Contributors: stesha66
 Tags: forum,2x2forum,mywebforum
 Requires at least: 3.1
@@ -16,7 +16,7 @@ The plugin to show the latest threads from 2x2forum.ru or mywebforum.com platfor
 This section describes how to install the plugin and get it working.
 e.g.
 
-1. Upload `2x2forum.zip` to the `/wp-content/plugins/` directory
+1. Upload `widget-2x2forum.zip` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the \'Plugins\' menu in WordPress
 1. Place 2x2Forum Widget in your templates
 

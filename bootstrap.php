@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: 2x2forum
-Plugin URI:  https://github.com/Ekaterino4ka90/2x2forum
+Plugin Name: widget-2x2forum
+Plugin URI:  https://github.com/Ekaterino4ka90/widget-2x2forum
 Description: The plugin to show the latest threads from 2x2forum.ru or mywebforum.com platform.
 Version:     0.1
 Author:      Ekaterina Budoragina
