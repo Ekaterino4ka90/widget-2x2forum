@@ -45,7 +45,7 @@ class WP_2x2Forum_Instance extends WP_Widget
 
         $forumUrl = $url['scheme'] .'://'. $url['host'];
 
-        $requestUrl = 'https://' . $url['host'] . '/api/thread/latest?limit=' . $count;
+        $requestUrl = $forumUrl . '/api/thread/latest?limit=' . $count;
 
         echo $args['before_widget'] . $args['before_title'] . esc_attr( $title ) . $args['after_title'];
 
