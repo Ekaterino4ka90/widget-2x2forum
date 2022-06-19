@@ -1,6 +1,6 @@
 <?php
 
-class WP_Forum_Instance extends WP_Widget
+class WP_2x2Forum_Instance extends WP_Widget
 {
     /**
      * Automatically cache the response for 5 min.
@@ -18,9 +18,9 @@ class WP_Forum_Instance extends WP_Widget
 
     public function enqueue_style()
     {
-        wp_enqueue_script('forum_js');
+        wp_enqueue_script('wp_forum2x2_js');
 
-        wp_enqueue_style('forum_css');
+        wp_enqueue_style('wp_forum2x2_css');
     }
 
     public function widget($args, $instance)
@@ -43,9 +43,11 @@ class WP_Forum_Instance extends WP_Widget
             return;
         }
 
+        $forumUrl = $url['scheme'] .'://'. $url['host'];
+
         $requestUrl = 'https://' . $url['host'] . '/api/thread/latest?limit=' . $count;
 
-        echo $args['before_widget'] . $args['before_title'] . $title . $args['after_title'];
+        echo $args['before_widget'] . $args['before_title'] . esc_attr( $title ) . $args['after_title'];
 
         if (!$async) {
 
@@ -78,20 +80,20 @@ class WP_Forum_Instance extends WP_Widget
         $async = !empty($instance['async']) ? $instance['async'] : 0;
         $title = !empty($instance['title']) ? $instance['title'] : ''; ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>">Title:</label>
-            <input type="text" id="<?php echo $this->get_field_id('title'); ?>"
-                   name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo esc_attr($title); ?>"/>
+            <label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>">Title:</label>
+            <input type="text" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>"
+                   name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" value="<?php echo esc_attr($title); ?>"/>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('forum_url'); ?>">Forum URL:</label>
-            <input type="text" id="<?php echo $this->get_field_id('forum_url'); ?>"
-                   name="<?php echo $this->get_field_name('forum_url'); ?>" value="<?php echo esc_attr($forumUrl); ?>"/>
+            <label for="<?php echo esc_attr( $this->get_field_id('forum_url') ); ?>">Forum URL:</label>
+            <input type="text" id="<?php echo esc_attr( $this->get_field_id('forum_url') ); ?>"
+                   name="<?php echo esc_attr( $this->get_field_name('forum_url') ); ?>" value="<?php echo esc_attr($forumUrl); ?>"/>
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('count'); ?>">Number of Latest Threads:</label>
-            <input type="text" id="<?php echo $this->get_field_id('count'); ?>"
-                   name="<?php echo $this->get_field_name('count'); ?>" value="<?php echo esc_attr($count); ?>"/>
+            <label for="<?php echo esc_attr( $this->get_field_id('count') ); ?>">Number of Latest Threads:</label>
+            <input type="text" id="<?php echo esc_attr( $this->get_field_id('count') ); ?>"
+                   name="<?php echo esc_attr( $this->get_field_name('count') ); ?>" value="<?php echo esc_attr($count); ?>"/>
         </p>
         <p>
             <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('async'); ?>"

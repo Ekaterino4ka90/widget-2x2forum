@@ -9,8 +9,8 @@
         <?php
     } elseif ($async) {
         ?>
-        <div class="threads-wrapper" data-url="<?= $requestUrl; ?>" data-base-url="<?= $forumUrl; ?>"
-             data-images-url="<?= $pluginUrl; ?>"></div>
+        <div class="threads-wrapper" data-url="<?php echo esc_url( $requestUrl ); ?>" data-base-url="<?php echo esc_url( $forumUrl ); ?>"
+             data-images-url="<?php echo esc_url( $pluginUrl ); ?>"></div>
         <?php
     } else {
         foreach ($json['threads'] as $thread) {
@@ -20,12 +20,12 @@
                     <img src="<?php echo esc_url(plugins_url('../images/question.svg', __FILE__)); ?>" alt="question"/>
                 </div>
                 <div class="thread-link">
-                    <a href="<?= $forumUrl . '/thread/' . $thread['slug']; ?>"
-                       target="_blank"><?= $thread['name']; ?></a>
+                    <a href="<?php echo esc_url( $forumUrl . '/thread/' . $thread['slug'] ); ?>"
+                       target="_blank"><?php echo esc_attr( $thread['name'] ); ?></a>
                 </div>
                 <div class="messages">
                     <img src="<?php echo esc_url(plugins_url('../images/messages.svg', __FILE__)); ?>" alt="messages"/>
-                    <span class="font-bold"><?= $thread['posts']; ?></span>
+                    <span class="font-bold"><?php echo esc_attr( $thread['posts'] ); ?></span>
                 </div>
             </div>
 

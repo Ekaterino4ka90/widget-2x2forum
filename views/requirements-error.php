@@ -1,14 +1,14 @@
 <div class="error">
-    <p><?php echo FORUM_NAME; ?> error: Your environment doesn't meet all of the system requirements listed below.</p>
+    <p><?php echo WP_FORUM_2x2_NAME; ?> error: Your environment doesn't meet all of the system requirements listed below.</p>
 
     <ul class="ul-disc">
         <li>
-            <strong>PHP <?php echo FORUM_REQUIRED_PHP_VERSION; ?>+</strong>
+            <strong>PHP <?php echo WP_FORUM_2x2_REQUIRED_PHP_VERSION; ?>+</strong>
             <em>(You're running version <?php echo PHP_VERSION; ?>)</em>
         </li>
 
         <li>
-            <strong>WordPress <?php echo FORUM_REQUIRED_WP_VERSION; ?>+</strong>
+            <strong>WordPress <?php echo WP_FORUM_2x2_REQUIRED_WP_VERSION; ?>+</strong>
             <em>(You're running version <?php echo esc_html( $wp_version ); ?>)</em>
         </li>
 
